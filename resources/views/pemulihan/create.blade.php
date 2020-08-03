@@ -28,10 +28,6 @@ Pemulihan
                     <input type="date" name="tanggal_mulai" class="form-control" placeholder="Masukkan tanggal mulai" required>
                 </div>
                 <div class="form-group">
-                    <label for="tanggal_selesai">Tanggal Selesai</label>
-                    <input type="date" name="tanggal_selesai" class="form-control" placeholder="Masukkan tanggal selesai" required>
-                </div>
-                <div class="form-group">
                     <label for="">Tindak Lanjut</label>
                     <input type="text" name="tindak_lanjut" class="form-control" placeholder="Masukkan tindak lanjut" required>
                 </div>

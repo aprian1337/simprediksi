@@ -48,7 +48,6 @@ class PemulihanController extends Controller
         ->update([
             'id_kebencanaan' => $request->id_kebencanaan,
             'tanggal_mulai' => $request->tanggal_mulai,
-            'tanggal_selesai' => $request->tanggal_selesai,
             'tindak_lanjut' => $request->tindak_lanjut,
             'keterangan' => $request->keterangan,
         ]);
@@ -63,7 +62,12 @@ class PemulihanController extends Controller
     }
 
     public function store(Request $request){
-        \App\Pemulihan::create($request->all());
+        $kebencanaan=\App\Kebencanaan::where('id_kebencanaan', $request->id_kebencanaan)->select('kekuatan_gempa')->first();
+        $kalkulasi=(int)round(abs(-511.1539287+144.4084868*$kebencanaan->kekuatan_gempa));
+        $tanggal_mulai=date('Y-m-d', strtotime($request->tanggal_mulai. ' + '.$kalkulasi.' days'));
+        \App\Pemulihan::create($request->all() + [
+            'tanggal_selesai' => $tanggal_mulai
+        ]);
         return redirect()->intended('pemulihan')->with('success', 'Berhasil menambah data baru');
     }
 }

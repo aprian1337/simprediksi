@@ -12,7 +12,7 @@ Kebencanaan
                 @csrf
                 <div class="form-group">
                     <label for="id_kebencanaan">ID Kebencanaan</label>
-                    <input type="number" min="1" name="id_kebencanaan" class="form-control" placeholder="Masukkan ID Kebencanaan (Kosongkan Untuk Mengurutkan ID Terakhir)" required>
+                    <input type="number" min="1" name="id_kebencanaan" class="form-control" placeholder="Masukkan ID Kebencanaan (Kosongkan Untuk Mengurutkan ID Terakhir)">
                 </div>
                 <div class="form-group">
                     <label for="id_kokab">ID Kokab</label>

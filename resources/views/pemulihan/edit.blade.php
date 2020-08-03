@@ -1,19 +1,19 @@
 @extends('layout.layouts')
 @section('title')
-Korban
+Pemulihan
 @endsection
 @section('content')
 <div class="container mt-5">
     <div class="card">
         <div class="card-body">
-            <h4>Edit Data Korban</h4>
+            <h4>Edit Data Pemulihan</h4>
             <hr>
             <form action="{{route('pemulihan-update', $edit->id_pemulihan)}}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="id_pemulihan">ID Pemulihan</label>
                     <input type="number" disabled min="1" class="form-control" value="{{$edit->id_pemulihan}}"
-                        placeholder="Masukkan ID Korban (Kosongkan Untuk Mengurutkan ID Terakhir)">
+                        placeholder="Masukkan ID Pemulihan (Kosongkan Untuk Mengurutkan ID Terakhir)">
                     <input type="hidden" name="id_pemulihan" value="{{$edit->id_pemulihan}}">
                 </div>
                 <div class="form-group">
@@ -36,7 +36,7 @@ Korban
                 <div class="form-group">
                     <label for="tanggal_selesai">Tanggal Selesai</label>
                     <input type="date" value="{{$edit->tanggal_selesai}}"
-                        name="tanggal_selesai" class="form-control" placeholder="Masukkan tanggal selesai" required>
+                        class="form-control" placeholder="Masukkan tanggal selesai" disabled>
                 </div>
                 <div class="form-group">
                     <label for="">Tindak Lanjut</label>
